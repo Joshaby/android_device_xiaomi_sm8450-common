@@ -170,6 +170,10 @@ on property:vendor.post_boot.parsed=1
     # Set power profile mode on boot
     setprop sys.perf_mode_active 1
 
+on property:vendor.post_boot.parsed=1
+    # Set restricted cpuset to the same CPUs as system-background
+    copy /dev/cpuset/system-background/cpus /dev/cpuset/restricted/cpus
+
 on property:persist.sys.xtra-daemon.enabled=*
     restart loc_launcher
 

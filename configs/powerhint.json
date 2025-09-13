@@ -34,6 +34,7 @@
       "Path": "/sys/devices/system/cpu/cpufreq/policy0/walt/down_rate_limit_us",
       "Values": [
         "20000",
+        "8000",
         "2000"
       ],
       "ResetOnInit": true
@@ -75,6 +76,7 @@
       "Path": "/sys/devices/system/cpu/cpufreq/policy4/walt/down_rate_limit_us",
       "Values": [
         "10000",
+        "6000",
         "2000"
       ],
       "ResetOnInit": true
@@ -123,7 +125,8 @@
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
       "Values": [
         "0",
-        "30"
+        "30",
+        "40"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -173,7 +176,8 @@
       "Path": "/proc/sys/walt/sched_min_task_util_for_boost",
       "Values": [
         "0",
-        "51"
+        "51",
+        "35"
       ],
       "ResetOnInit": true
     },
@@ -191,7 +195,8 @@
       "Path": "/proc/sys/walt/sched_min_task_util_for_uclamp",
       "Values": [
         "0",
-        "51"
+        "51",
+        "35"
       ],
       "ResetOnInit": true
     },
@@ -245,6 +250,7 @@
       "Path": "/sys/class/kgsl/kgsl-3d0/idle_timer",
       "Values": [
         "10000",
+        "2000",
         "58"
       ],
       "ResetOnInit": true
@@ -392,7 +398,7 @@
       "PowerHint": "INTERACTION",
       "Node": "UclampTAMin",
       "Duration": 250,
-      "Value": "30"
+      "Value": "40"
     },
     {
       "PowerHint": "INTERACTION",
@@ -470,7 +476,7 @@
       "PowerHint": "INTERACTIVE",
       "Node": "CPULittleClusterDownRateLimit",
       "Duration": 0,
-      "Value": "20000"
+      "Value": "8000"
     },
     {
       "PowerHint": "INTERACTIVE",
@@ -482,7 +488,7 @@
       "PowerHint": "INTERACTIVE",
       "Node": "CPUBigClusterDownRateLimit",
       "Duration": 0,
-      "Value": "10000"
+      "Value": "6000"
     },
     {
       "PowerHint": "INTERACTIVE",
@@ -644,7 +650,7 @@
       "PowerHint": "LAUNCH",
       "Node": "GPUIdleTimer",
       "Duration": 1500,
-      "Value": "58"
+      "Value": "2000"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -860,13 +866,13 @@
       "PowerHint": "THERMAL_EVENT",
       "Node": "SchedMinTaskUtilForBoost",
       "Duration": 5000,
-      "Value": "51"
+      "Value": "35"
     },
     {
       "PowerHint": "THERMAL_EVENT",
       "Node": "SchedMinTaskUtilForUclamp",
       "Duration": 5000,
-      "Value": "51"
+      "Value": "35"
     },
     {
       "PowerHint": "THERMAL_EVENT",

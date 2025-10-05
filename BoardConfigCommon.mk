@@ -51,6 +51,12 @@ BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 
 TARGET_USES_QCOM_MM_AUDIO := true
 
+# ART
+ART_BUILD_TARGET_NDEBUG := true
+ART_BUILD_TARGET_DEBUG := false
+ART_BUILD_HOST_NDEBUG := true
+ART_BUILD_HOST_DEBUG := false
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := taro
 TARGET_NO_BOOTLOADER := true
@@ -60,6 +66,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth/include
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
+
+# Fingerprint
+$(call soong_config_set, xiaomi_hardware_biometrics, run_32bit, false)
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
@@ -194,10 +203,14 @@ VENDOR_SECURITY_PATCH := 2025-08-01
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-
+include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+
+ifneq (,$(filter user, $(TARGET_BUILD_VARIANT)))
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/test
+endif
 
 # VINTF
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml

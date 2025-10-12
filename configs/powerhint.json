@@ -4,7 +4,6 @@
       "Name": "CPULittleClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq",
       "Values": [
-        "9999999",
         "1804800",
         "1670400",
         "1555200",
@@ -27,7 +26,6 @@
       "Name": "CPULittleClusterMinFreq",
       "Path": "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq",
       "Values": [
-        "9999999",
         "1804800",
         "1670400",
         "1555200",
@@ -67,7 +65,6 @@
       "Name": "CPUBigClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq",
       "Values": [
-        "9999999",
         "2496000",
         "2342400",
         "2227200",
@@ -93,7 +90,6 @@
       "Name": "CPUBigClusterMinFreq",
       "Path": "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq",
       "Values": [
-        "9999999",
         "2496000",
         "2342400",
         "2227200",
@@ -137,7 +133,6 @@
       "Name": "CPUBigPlusClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq",
       "Values": [
-        "9999999",
         "2918400",
         "2822400",
         "2707200",
@@ -165,7 +160,6 @@
       "Name": "CPUBigPlusClusterMinFreq",
       "Path": "/sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq",
       "Values": [
-        "9999999",
         "2918400",
         "2822400",
         "2707200",

@@ -808,17 +808,17 @@
       "PowerHint": "TOUCH_DOWN",
       "Node": "CPUBWMinFreq",
       "Duration": 100,
-      "Value": "547000"
-    },
-    {
-      "PowerHint": "TOUCH_UP",
-      "Node": "UclampFGMin",
-      "Duration": 0,
       "Value": "1555000"
     },
     {
       "PowerHint": "TOUCH_UP",
       "Node": "UclampTAMin",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "TOUCH_UP",
+      "Node": "UclampFGMin",
       "Duration": 0,
       "Value": "0"
     },

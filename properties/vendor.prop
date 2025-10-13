@@ -50,6 +50,9 @@ vendor.qc2audio.suspend.enabled=true
 vendor.audio.dolby.ds2.enabled=false
 vendor.audio.dolby.ds2.hardbypass=false
 
+# Video
+persist.mm.enable.prefetch=true
+
 # Bluetooth - Vendor
 bluetooth.hardware.power.idle_cur_ma=6
 bluetooth.hardware.power.operating_voltage_mv=3700

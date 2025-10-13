@@ -85,6 +85,8 @@ ro.bluetooth.leaudio_offload.supported=true
 ro.hardware.camera=xiaomi
 persist.vendor.camera.logInfoMask=false
 persist.vendor.vcb.enable=false
+persist.vendor.camera.logLevel=0
+persist.vendor.camera.sensor=0
 
 # Chipset
 ro.soc.manufacturer=QTI

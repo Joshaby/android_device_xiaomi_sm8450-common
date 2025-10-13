@@ -52,7 +52,7 @@ ro.sf.blurs_are_expensive=1
 # HWUI
 debug.hwui.skia_atrace_enabled=false
 debug.hwui.use_hint_manager=true
-debug.hwui.target_cpu_time_percent=30
+debug.hwui.target_cpu_time_percent=50
 
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true

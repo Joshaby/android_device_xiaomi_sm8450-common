@@ -27,7 +27,7 @@ AB_OTA_PARTITIONS += \
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv9-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_VARIANT := kryo785
+TARGET_CPU_VARIANT := cortex-a510
 TARGET_CPU_VARIANT_RUNTIME := cortex-a510
 
 # Audio
@@ -266,3 +266,8 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Better Optimization flags
 BOARD_COMPILER_OPTIMIZATION := speed
+
+# Otimizações específicas do GCC/Clang
+CLANG_O3 := true
+TARGET_OPTIMIZATION_FLAGS := -O3
+TARGET_USE_O3 := true

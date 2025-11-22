@@ -146,10 +146,6 @@ on property:vendor.post_boot.parsed=1
     # Enable suspend to RAM
     write /sys/power/mem_sleep "deep"
 
-on property:vendor.post_boot.parsed=1
-    # Set restricted cpuset to the same CPUs as system-background
-    copy /dev/cpuset/system-background/cpus /dev/cpuset/restricted/cpus
-
 on property:persist.sys.xtra-daemon.enabled=*
     restart loc_launcher
 

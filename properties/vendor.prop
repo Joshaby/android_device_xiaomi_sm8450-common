@@ -169,6 +169,7 @@ debug.hwui.skia_atrace_enabled=false
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
 debug.hwui.skip_empty_frames=false
+debug.hwui.use_triple_buffering=true
 
 # Graphics
 ro.surface_flinger.support_kernel_idle_timer=true

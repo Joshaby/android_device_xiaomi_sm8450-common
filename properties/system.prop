@@ -1,3 +1,9 @@
+# Camera
+log.tag.CHIUSECASE=ERROR
+
+# CameraX
+ro.camerax.extensions.enabled=true
+
 # CNE
 persist.vendor.cne.feature=1
 

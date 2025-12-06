@@ -1034,3 +1034,6 @@ vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
 # Xiaomi MAC address
 vendor/bin/nv_mac
+
+# Camera Extension
+system_ext/framework/camerax-vendor-extensions.jar

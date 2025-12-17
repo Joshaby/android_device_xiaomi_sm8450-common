@@ -141,6 +141,7 @@ debug.sf.early.sf.duration=20000000
 debug.sf.late.app.duration=18000000  
 debug.sf.late.sf.duration=20000000
 debug.sf.enable_adpf_cpu_hint=true
+debug.sf.enable_egl_image_tracker=0
 persist.sys.sf.color_mode=0
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=258

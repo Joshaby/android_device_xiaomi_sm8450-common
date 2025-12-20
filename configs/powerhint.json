@@ -484,27 +484,27 @@
       "Value": "580000000"
     },
     {
-      "PowerHint": "INTERACTIVE",
+      "PowerHint": "INTERACTION",
       "Node": "ThermalProfile",
-      "Duration": 0,
+      "Duration": 400,
       "Value": "20"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigPlusClusterMinFreq",
-      "Duration": 200,
+      "Duration": 400,
       "Value": "1536000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
-      "Duration": 200,
+      "Duration": 400,
       "Value": "1555200"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
-      "Duration": 200,
+      "Duration": 400,
       "Value": "1228800"
     },
     {

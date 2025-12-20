@@ -484,6 +484,12 @@
       "Value": "580000000"
     },
     {
+      "PowerHint": "SUSTAINED_PERFORMANCE",
+      "Node": "ThermalProfile",
+      "Duration": 0,
+      "Value": "20"
+    },
+    {
       "PowerHint": "INTERACTION",
       "Node": "ThermalProfile",
       "Duration": 400,
@@ -790,6 +796,12 @@
       "Value": "1228800"
     },
     {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "ThermalProfile",
+      "Duration": 0,
+      "Value": "20"
+    },
+    {
       "PowerHint": "TOUCH_DOWN",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 100,
@@ -896,6 +908,12 @@
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
       "Value": "1228800"
+    },
+    {
+      "PowerHint": "FIXED_PERFORMANCE",
+      "Node": "ThermalProfile",
+      "Duration": 0,
+      "Value": "20"
     },
     {
       "PowerHint": "Flipendo",

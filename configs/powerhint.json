@@ -454,6 +454,12 @@
       "Value": "1"
     },
     {
+      "PowerHint": "INTERACTIVE",
+      "Node": "ThermalProfile",
+      "Duration": 0,
+      "Value": "0" 
+    },
+    {
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "PowerHALMainState",
       "Duration": 0,
@@ -932,6 +938,12 @@
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 0,
       "Value": "2918400"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "ThermalProfile",
+      "Duration": 0,
+      "Value": "20" 
     }
   ]
 }

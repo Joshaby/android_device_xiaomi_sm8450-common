@@ -35,13 +35,9 @@ activity_manager.max_cached_processes=64
 # Blur
 ro.sf.blurs_are_expensive=1
 
-# SkiaVK rendering
-debug.hwui.renderer=skiavk
-debug.hwui.show_overdraw=false
-debug.renderengine.vulkan=true
-debug.renderengine.graphite=true
-debug.renderengine.backend=skiavkthreaded
-debug.stagefright.renderengine.backend=threaded
+# SkiaGL rendering
+debug.hwui.renderer=skiagl
+debug.renderengine.backend=skiaglthreaded
 renderthread.skia.reduceopstasksplitting=true
 
 # Battery Saving

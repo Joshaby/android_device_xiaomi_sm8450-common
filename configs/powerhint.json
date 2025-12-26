@@ -166,7 +166,8 @@
       "Values": [
         "0",
         "30",
-        "50"
+        "50",
+        "60"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -498,26 +499,26 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigPlusClusterMinFreq",
-      "Duration": 850,
+      "Duration": 950,
       "Value": "1766400"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
-      "Duration": 850,
+      "Duration": 950,
       "Value": "1555200"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
-      "Duration": 850,
+      "Duration": 950,
       "Value": "1228800"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampTAMin",
-      "Duration": 850,
-      "Value": "50"
+      "Duration": 950,
+      "Value": "60"
     },
     {
       "PowerHint": "INTERACTION",

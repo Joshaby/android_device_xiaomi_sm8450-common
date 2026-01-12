@@ -331,8 +331,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.pixel-libperfmgr \
-    libqti-perfd-client
+    android.hardware.power-service-qti
+
+PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/power/config/taro/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # Powershare
 $(call soong_config_set,lineage_powershare,powershare_path,/sys/class/qcom-battery/reverse_chg_mode)
@@ -376,10 +378,7 @@ $(foreach sku, taro diwali cape ukee, \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi \
-    hardware/google/interfaces \
-    hardware/google/pixel \
-    vendor/qcom/opensource/usb/etc
+    hardware/xiaomi
 
 # Telephony
 PRODUCT_PACKAGES += \

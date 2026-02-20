@@ -224,3 +224,6 @@ vendor.usb.use_gadget_hal=1
 
 # WiFi
 wifi.aware.interface=wifi-aware0
+
+# Test
+debug.renderengine.blur_algorithm=kawase2

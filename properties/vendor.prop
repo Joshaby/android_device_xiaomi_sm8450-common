@@ -166,15 +166,6 @@ ro.surface_flinger.support_kernel_idle_timer=true
 
 # HWUI
 debug.sf.enable_adpf_cpu_hint=true
-debug.hwui.renderer=skiagl
-debug.renderengine.backend=skiagl
-debug.hwui.skia_atrace_enabled=false
-debug.renderengine.skia_atrace_enabled=false
-debug.hwui.skia_tracing_enabled=false
-debug.hwui.skia_use_perfetto_track_events=false
-debug.atrace.tags.enableflags=0
-debug.renderengine.skia_tracing_enabled=false
-debug.renderengine.skia_use_perfetto_track_events=false
 
 # Incremental
 ro.incremental.enable=yes

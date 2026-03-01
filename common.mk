@@ -535,3 +535,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     dalvik.vm.heaptargetutilization?=0.75 \
     dalvik.vm.heapminfree?=512k \
     dalvik.vm.heapmaxfree?=8m
+
+# KProfiles
+PRODUCT_PACKAGES += \
+    KProfiles

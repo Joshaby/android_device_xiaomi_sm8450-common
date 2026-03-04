@@ -166,6 +166,8 @@ ro.surface_flinger.support_kernel_idle_timer=true
 
 # HWUI
 debug.sf.enable_adpf_cpu_hint=true
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
 
 # Incremental
 ro.incremental.enable=yes
@@ -234,3 +236,8 @@ log.tag.ANDR-PERF-RESOURCEQS=S
 log.tag.SatelliteController=S
 log.tag.vendor.qti.hardware.iop@2.0-service=S
 log.tag.ContextImpl=S
+
+# DexOPT Optimizer
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed
+pm.dexopt.boot=verify

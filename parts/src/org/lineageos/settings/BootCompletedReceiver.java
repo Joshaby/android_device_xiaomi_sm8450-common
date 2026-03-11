@@ -35,6 +35,7 @@ import android.view.Display.HdrCapabilities;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.powertools.PowerProfileTileService;
+import org.lineageos.settings.hypercharge.HyperChargeService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
@@ -50,6 +51,27 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             case Intent.ACTION_BOOT_COMPLETED:
                 handleBootCompleted(context);
                 break;
+        }
+
+        PreferenceManager.setDefaultValues(context, R.xml.hypercharge_settings, false);
+
+        try {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+            boolean isHyperChargeEnabled = prefs.getBoolean(Constants.KEY_HYPERCHARGE_STATUS, true);
+
+            // Note: We use a try-catch here as well just in case boot happens before UI sanitization
+            String currentLimit;
+            try {
+                currentLimit = prefs.getString(Constants.KEY_HYPERCHARGE_LIMIT, Constants.CHARGE_LIMIT_120W);
+            } catch (ClassCastException e) {
+                currentLimit = Constants.CHARGE_LIMIT_120W;
+            }
+
+            if (!isHyperChargeEnabled || !Constants.CHARGE_LIMIT_120W.equals(currentLimit)) {
+                context.startService(new Intent(context, HyperChargeService.class));
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to start HyperChargeService on boot", e);
         }
     }
 

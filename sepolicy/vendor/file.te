@@ -25,3 +25,6 @@ type sysfs_thermal_writable, sysfs_type, fs_type;
 
 # KProfiles
 type sysfs_kprofiles, sysfs_type, fs_type;
+
+# Charger
+type vendor_sysfs_power_supply, fs_type, sysfs_type;

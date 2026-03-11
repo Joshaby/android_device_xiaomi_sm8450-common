@@ -189,5 +189,27 @@
             </intent-filter>
         </receiver>
 
+        <!-- HyperCharge Activity -->
+        <activity
+            android:name=".hypercharge.HyperChargeSettingsActivity"
+            android:label="@string/hypercharge_title"
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/hypercharge_main_switch_title" />
+        </activity>
+
+        <!-- HyperCharge Service -->
+        <service
+            android:name=".hypercharge.HyperChargeService"
+            android:exported="false" />
+
     </application>
 </manifest>

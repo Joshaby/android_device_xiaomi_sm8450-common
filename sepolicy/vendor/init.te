@@ -8,3 +8,11 @@ set_prop(vendor_init, vendor_qcc_prop)
 
 # KProfiles
 allow init sysfs_kprofiles:file { setattr };
+
+# Battery
+allow init vendor_sysfs_usb_supply:file setattr;
+allow init vendor_sysfs_battery_supply:file setattr;
+allow init vendor_sysfs_qcom_battery:file setattr;
+
+allow init vendor_sysfs_power_supply:file { setattr };
+r_dir_file(init, sysfs_batteryinfo)

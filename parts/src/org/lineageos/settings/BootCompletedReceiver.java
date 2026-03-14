@@ -31,12 +31,14 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.Display;
 import android.view.Display.HdrCapabilities;
+import android.content.SharedPreferences;
+import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.powertools.PowerProfileTileService;
 import org.lineageos.settings.hypercharge.HyperChargeService;
-
+import org.lineageos.settings.Constants;
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
     private static final String TAG = "XiaomiParts";

@@ -28,4 +28,7 @@ public class Constants {
 
     public static final String NODE_CONSTANT_CHARGE_CURRENT = "/sys/class/power_supply/battery/constant_charge_current";
     public static final String NODE_FASTCHG_MODE = "/sys/class/qcom-battery/fastchg_mode";
+
+    public static final String CHARGE_LIMIT_120W = "22000000";
+    public static final String CHARGE_LIMIT_33W = "6000000";
 }

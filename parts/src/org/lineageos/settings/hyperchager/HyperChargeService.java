@@ -22,6 +22,7 @@ import androidx.preference.PreferenceManager;
 import org.lineageos.settings.Constants;
 import org.lineageos.settings.utils.FileUtils;
 
+
 public class HyperChargeService extends Service {
     private static final String TAG = "HyperChargeService";
     

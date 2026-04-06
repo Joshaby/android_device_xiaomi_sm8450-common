@@ -215,6 +215,14 @@ $(call soong_config_set, qtilocation, supports_wearables, false)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
 
+
+# Graphics
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer3-V2-ndk.vendor \
+    android.hardware.graphics.composer3-V4-ndk.vendor \
+    android.hardware.graphics.common-V4-ndk \
+    android.hardware.graphics.common-V7-ndk
+
 # Graphics
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \

@@ -568,3 +568,7 @@ SYSTEMUI_OPTIMIZE_JAVA := true
 
 # Reduce system server verbosity
 PRODUCT_SYSTEM_SERVER_DEBUG_INFO := false
+
+# Device-Features
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/cupid.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/device_features/cupid.xml

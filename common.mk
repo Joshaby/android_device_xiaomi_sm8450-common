@@ -569,6 +569,7 @@ SYSTEMUI_OPTIMIZE_JAVA := true
 # Reduce system server verbosity
 PRODUCT_SYSTEM_SERVER_DEBUG_INFO := false
 PRODUCT_OTHER_JAVA_DEBUG_INFO := false
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
@@ -578,3 +579,16 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Device-Features
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/cupid.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/device_features/cupid.xml
+
+# ART - PREOPT
+# Enable DM file pre-opting to reduce first boot time
+PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
+# Do not generate libartd.
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+USE_DEX2OAT_DEBUG := false
+
+# Preopt critical applications
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Settings \
+    SystemUI

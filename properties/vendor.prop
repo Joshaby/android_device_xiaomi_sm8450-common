@@ -172,6 +172,7 @@ debug.sf.enable_adpf_cpu_hint=true
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
 debug.hwui.use_triple_buffering=true
+debug.hwui.skia_atrace_enabled=false
 
 # Fling
 ro.min.fling_velocity=160

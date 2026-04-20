@@ -252,6 +252,7 @@ log.tag.SatelliteController=S
 log.tag.vendor.qti.hardware.iop@2.0-service=S
 log.tag.ContextImpl=S
 log.tag.libbinder.ServiceManagerCppClient=S
+persist.vendor.sensors.debug.hal=0
 
 # DexOPT Optimizer
 pm.dexopt.install=speed-profile

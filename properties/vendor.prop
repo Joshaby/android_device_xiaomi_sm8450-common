@@ -176,7 +176,13 @@ debug.sf.enable_adpf_cpu_hint=true
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
 debug.hwui.use_triple_buffering=true
+debug.hwui.renderer=skiagl
+debug.renderengine.backend=skiaglthreaded
 debug.hwui.skia_atrace_enabled=false
+debug.hwui.skia_tracing_enabled=false
+debug.hwui.skia_use_perfetto_track_events=false
+ro.egl.blobcache.multifile=true
+ro.egl.blobcache.multifile_limit=33554432
 
 # Fling
 ro.min.fling_velocity=160

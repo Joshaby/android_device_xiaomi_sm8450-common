@@ -17,11 +17,12 @@ import java.io.IOException;
 
 public class KernelManagerUtils {
 
-    public static final int EFFICIENCY_CLUSTER = 0;
-    public static final int PERFORMANCE_CLUSTER = 6;
+    public static final int LITTLE_CLUSTER = 0;
+    public static final int BIG_CLUSTER = 4;
+    public static final int PRIME_CLUSTER = 7;
     
-    private static final int[] POLICIES = {EFFICIENCY_CLUSTER, PERFORMANCE_CLUSTER};
-    private static final String DEFAULT_GOVERNOR = "schedutil";
+    private static final int[] POLICIES = {LITTLE_CLUSTER, BIG_CLUSTER, PRIME_CLUSTER};
+    private static final String DEFAULT_GOVERNOR = "walt";
     
     // CPU frequency and governor paths
     private static final String CPU_BASE_PATH = "/sys/devices/system/cpu/cpufreq/policy";
@@ -33,10 +34,10 @@ public class KernelManagerUtils {
 
     public String[] getAvailableGovernors() {
         try {
-            String governors = readFile(CPU_BASE_PATH + EFFICIENCY_CLUSTER + SCALING_AVAILABLE_GOVERNORS);
+            String governors = readFile(CPU_BASE_PATH + LITTLE_CLUSTER + SCALING_AVAILABLE_GOVERNORS);
             return governors.trim().split("\\s+");
         } catch (Exception e) {
-            return new String[]{"schedutil", "performance", "powersave", "ondemand", "conservative"};
+            return new String[]{"walt", "conservative", "powersave", "performance", "schedutil"};
         }
     }
 
@@ -105,12 +106,16 @@ public class KernelManagerUtils {
     }
 
     // Cluster-specific helper methods
-    public void setEfficiencyClusterFrequency(String minFreq, String maxFreq) {
-        setFrequencyRange(EFFICIENCY_CLUSTER, minFreq, maxFreq);
+    public void setLittleClusterFrequency(String minFreq, String maxFreq) {
+        setFrequencyRange(LITTLE_CLUSTER, minFreq, maxFreq);
     }
     
-    public void setPerformanceClusterFrequency(String minFreq, String maxFreq) {
-        setFrequencyRange(PERFORMANCE_CLUSTER, minFreq, maxFreq);
+    public void setBigClusterFrequency(String minFreq, String maxFreq) {
+        setFrequencyRange(BIG_CLUSTER, minFreq, maxFreq);
+    }
+
+    public void setPrimeClusterFrequency(String minFreq, String maxFreq) {
+        setFrequencyRange(PRIME_CLUSTER, minFreq, maxFreq);
     }
 
     public void resetToDefaults() {

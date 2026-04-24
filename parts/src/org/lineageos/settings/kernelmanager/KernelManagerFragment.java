@@ -17,21 +17,24 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
 import org.lineageos.settings.R;
 
-public class KernelManagerFragment extends PreferenceFragment
-        implements Preference.OnPreferenceChangeListener {
+public class KernelManagerFragment extends PreferenceFragment 
+    implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_CPU_GOVERNOR = "cpu_governor";
-    private static final String KEY_EFFICIENCY_MIN_FREQ = "efficiency_min_freq";
-    private static final String KEY_EFFICIENCY_MAX_FREQ = "efficiency_max_freq";
-    private static final String KEY_PERFORMANCE_MIN_FREQ = "performance_min_freq";
-    private static final String KEY_PERFORMANCE_MAX_FREQ = "performance_max_freq";
+    private static final String KEY_LITTLE_MIN_FREQ = "little_min_freq";
+    private static final String KEY_LITTLE_MAX_FREQ = "little__max_freq";
+    private static final String KEY_BIG_MIN_FREQ = "big_min_freq";
+    private static final String KEY_BIG_MAX_FREQ = "big_max_freq";
+    private static final String KEY_PRIME_MIN_FREQ = "prime_min_freq";
+    private static final String KEY_PRIME_MAX_FREQ = "prime_max_freq";
     private static final String KEY_APPLY_SETTINGS = "apply_settings";
     private static final String KEY_RESET_SETTINGS = "reset_settings";
     
     private KernelManagerUtils mKernelUtils;
     private ListPreference mGovernorPreference;
-    private ListPreference mEfficiencyMinFreq, mEfficiencyMaxFreq;
-    private ListPreference mPerformanceMinFreq, mPerformanceMaxFreq;
+    private ListPreference mLittleMinFreq, mLittleMaxFreq;
+    private ListPreference mBigMinFreq, mBigMaxFreq;
+    private ListPreference mPrimeMinFreq, mPrimeMaxFreq;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -44,10 +47,12 @@ public class KernelManagerFragment extends PreferenceFragment
 
     private void initializePreferences() {
         mGovernorPreference = (ListPreference) findPreference(KEY_CPU_GOVERNOR);
-        mEfficiencyMinFreq = (ListPreference) findPreference(KEY_EFFICIENCY_MIN_FREQ);
-        mEfficiencyMaxFreq = (ListPreference) findPreference(KEY_EFFICIENCY_MAX_FREQ);
-        mPerformanceMinFreq = (ListPreference) findPreference(KEY_PERFORMANCE_MIN_FREQ);
-        mPerformanceMaxFreq = (ListPreference) findPreference(KEY_PERFORMANCE_MAX_FREQ);
+        mLittleMinFreq = (ListPreference) findPreference(KEY_EFFICIENCY_MIN_FREQ);
+        mLittleMaxFreq = (ListPreference) findPreference(KEY_EFFICIENCY_MAX_FREQ);
+        mBigMinFreq = (ListPreference) findPreference(KEY_PERFORMANCE_MIN_FREQ);
+        mBigMaxFreq = (ListPreference) findPreference(KEY_PERFORMANCE_MAX_FREQ);
+        mPrimeMinFreq = (ListPreference) findPreference(KEY_PRIME_MIN_FREQ);
+        mPrimeMaxFreq = (ListPreference) findPreference(KEY_PRIME_MAX_FREQ);
         
         // Set listeners
         if (mGovernorPreference != null) {
@@ -75,10 +80,12 @@ public class KernelManagerFragment extends PreferenceFragment
     }
 
     private void setFrequencyPreferenceListeners() {
-        if (mEfficiencyMinFreq != null) mEfficiencyMinFreq.setOnPreferenceChangeListener(this);
-        if (mEfficiencyMaxFreq != null) mEfficiencyMaxFreq.setOnPreferenceChangeListener(this);
-        if (mPerformanceMinFreq != null) mPerformanceMinFreq.setOnPreferenceChangeListener(this);
-        if (mPerformanceMaxFreq != null) mPerformanceMaxFreq.setOnPreferenceChangeListener(this);
+        if (mLittleMinFreq != null) mLittleMinFreq.setOnPreferenceChangeListener(this);
+        if (mLittleMaxFreq != null) mLittleMaxFreq.setOnPreferenceChangeListener(this);
+        if (mBigMinFreq != null) mBigMinFreq.setOnPreferenceChangeListener(this);
+        if (mBigMaxFreq != null) mBigMaxFreq.setOnPreferenceChangeListener(this);
+        if (mPrimeMinFreq != null) mPrimeMinFreq.setOnPreferenceChangeListener(this);
+        if (mPrimeMaxFreq != null) mPrimeMaxFreq.setOnPreferenceChangeListener(this);
     }
 
     private void loadCurrentSettings() {
@@ -87,14 +94,15 @@ public class KernelManagerFragment extends PreferenceFragment
         if (governors != null && mGovernorPreference != null) {
             mGovernorPreference.setEntries(governors);
             mGovernorPreference.setEntryValues(governors);
-            String currentGovernor = mKernelUtils.getCurrentGovernor(KernelManagerUtils.EFFICIENCY_CLUSTER);
+            String currentGovernor = mKernelUtils.getCurrentGovernor(KernelManagerUtils.LITTLE_CLUSTER);
             mGovernorPreference.setValue(currentGovernor);
             mGovernorPreference.setSummary(getString(R.string.cpu_governor_summary, currentGovernor));
         }
         
         // Load available frequencies for each cluster
-        loadFrequenciesForCluster(KernelManagerUtils.EFFICIENCY_CLUSTER, mEfficiencyMinFreq, mEfficiencyMaxFreq);
-        loadFrequenciesForCluster(KernelManagerUtils.PERFORMANCE_CLUSTER, mPerformanceMinFreq, mPerformanceMaxFreq);
+        loadFrequenciesForCluster(KernelManagerUtils.LITTLE_CLUSTER, mLittleMinFreq, mLittleMaxFreq);
+        loadFrequenciesForCluster(KernelManagerUtils.BIG_CLUSTER, mBigMinFreq, mBigMaxFreq);
+        loadFrequenciesForCluster(KernelManagerUtils.PRIME_CLUSTER, mPrimeMinFreq, mPrimeMaxFreq);
     }
 
     private void loadFrequenciesForCluster(int cluster, ListPreference minPref, ListPreference maxPref) {
@@ -157,13 +165,17 @@ public class KernelManagerFragment extends PreferenceFragment
     }
 
     private void applyFrequencySettings() {
-        if (mEfficiencyMinFreq != null && mEfficiencyMaxFreq != null) {
-            mKernelUtils.setEfficiencyClusterFrequency(
-                mEfficiencyMinFreq.getValue(), mEfficiencyMaxFreq.getValue());
+        if (mLittleMinFreq != null && mLittleMaxFreq != null) {
+            mKernelUtils.setLittleClusterFrequency(
+                mLittleMinFreq.getValue(), mLittleMaxFreq.getValue());
         }
-        if (mPerformanceMinFreq != null && mPerformanceMaxFreq != null) {
-            mKernelUtils.setPerformanceClusterFrequency(
-                mPerformanceMinFreq.getValue(), mPerformanceMaxFreq.getValue());
+        if (mBigMinFreq != null && mBigMaxFreq != null) {
+            mKernelUtils.setBigClusterFrequency(
+                mBigMinFreq.getValue(), mBigMaxFreq.getValue());
+        }
+        if (mPrimeMinFreq != null && mPrimeMaxFreq != null) {
+            mKernelUtils.setPrimeClusterFrequency(
+                mBigMinFreq.getValue(), mBigMaxFreq.getValue());
         }
     }
 

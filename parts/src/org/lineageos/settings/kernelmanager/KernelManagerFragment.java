@@ -175,7 +175,7 @@ public class KernelManagerFragment extends PreferenceFragment
         }
         if (mPrimeMinFreq != null && mPrimeMaxFreq != null) {
             mKernelUtils.setPrimeClusterFrequency(
-                mBigMinFreq.getValue(), mBigMaxFreq.getValue());
+                mPrimeMinFreq.getValue(), mBigMaxFreq.getValue());
         }
     }
 

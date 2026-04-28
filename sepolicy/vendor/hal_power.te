@@ -7,3 +7,5 @@ hal_client_domain(hal_power_default, hal_thermal)
 
 # Allow hal_power to access IStats service
 allow hal_power_default fwk_stats_service:service_manager find;
+
+allow hal_power_default vendor_sysfs_msm_perf:file rw_file_perms;

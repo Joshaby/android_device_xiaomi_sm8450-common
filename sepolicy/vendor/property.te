@@ -19,3 +19,6 @@ vendor_public_prop(vendor_panel_info_prop)
 
 # Thermal
 vendor_public_prop(vendor_thermal_normal_prop)
+
+# Power
+vendor_public_prop(vendor_power_prop)

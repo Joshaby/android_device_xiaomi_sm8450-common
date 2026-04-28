@@ -6,6 +6,9 @@ set_prop(vendor_init, vendor_thermal_normal_prop)
 set_prop(vendor_init, vendor_ssr_prop)
 set_prop(vendor_init, vendor_qcc_prop)
 
+# Power
+set_prop(vendor_init, vendor_power_prop)
+
 # KProfiles
 allow init sysfs_kprofiles:file { setattr };
 

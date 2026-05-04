@@ -227,6 +227,7 @@
         <item>powersave</item>
         <item>performance</item>
         <item>schedutil</item>
+        <item>vorpal</item>
     </string-array>
     <string-array name="cpu_governor_values" translatable="false">
         <item>walt</item>
@@ -234,6 +235,7 @@
         <item>powersave</item>
         <item>performance</item>
         <item>schedutil</item>
+        <item>vorpal</item>
     </string-array>
 
     <!-- Power Profile Modes -->

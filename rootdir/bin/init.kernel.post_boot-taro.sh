@@ -82,7 +82,7 @@ echo 325 > /proc/sys/walt/walt_low_latency_task_threshold
 
 # Cpuset
 # Isolate audio tasks to efficiency cores for stability
-echo 0-2 > /dev/cpuset/audio-app/cpus
+echo 1-2 > /dev/cpuset/audio-app/cpus
 
 # Bind all background noise and low-priority tasks to the 4 efficiency cores (0-3)
 echo 0-3 > /dev/cpuset/background/cpus
@@ -93,7 +93,7 @@ echo 0-3 > /dev/cpuset/system-background/cpus
 echo 0-5 > /dev/cpuset/foreground/cpus
 
 # Balance UI animation spikes and window rendering across efficiency and performance cores (excluding Prime)
-echo 0-5 > /dev/cpuset/foreground_window/cpus
+echo 0-6 > /dev/cpuset/foreground_window/cpus
 
 # Balanced camera daemon profile to prevent extreme thermal throttling during processing
 echo 0-5 > /dev/cpuset/camera-daemon/cpus

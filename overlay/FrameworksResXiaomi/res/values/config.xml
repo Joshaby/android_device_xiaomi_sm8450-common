@@ -268,4 +268,7 @@
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
+
+    <!--Useful if you want to improve signal reception -->
+    <bool name="config_ignoreRssnrSignalLevel">true</bool>
 </resources>

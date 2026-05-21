@@ -201,8 +201,6 @@ on property:sys.boot_completed=1
     write /sys/power/mem_sleep "deep"
 
 on property:vendor.post_boot.parsed=1
-    # Set restricted cpuset to the same CPUs as system-background
-    copy /dev/cpuset/system-background/cpus /dev/cpuset/restricted/cpus
     # Set power profile mode on boot
     # setprop sys.perf_mode_active 1
 
@@ -212,15 +210,26 @@ on property:vendor.post_boot.parsed=1
     chown system system /sys/kernel/kprofiles/kp_mode
     chmod 0660 /sys/kernel/kprofiles/kp_mode
 
-on property:vendor.post_boot.parsed=1
-    # Set restricted cpuset to the same CPUs as system-background
-    copy /dev/cpuset/system-background/cpus /dev/cpuset/restricted/cpus
+    # Cpuset
+    # Isolate audio tasks to efficiency cores for stability
+    write /dev/cpuset/audio-app/cpus 0-2
 
-    # Set background cpuset
-    write /dev/cpuset/background/cpus 0-1
+    # Bind all background noise and low-priority tasks to the 4 efficiency cores (0-3)
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
 
-    # Setup foreground cpuset for display composer.
-    write /dev/cpuset/foreground/cpus 0-6
+    # Everyday apps use efficiency cores + 2 performance cores (blocks the 3rd big core and Prime core to reduce heat)
+    write /dev/cpuset/foreground/cpus 0-5
+
+    # Balance UI animation spikes and window rendering across efficiency and performance cores (excluding Prime)
+    write /dev/cpuset/foreground_window/cpus 0-5
+
+    # Balanced camera daemon profile to prevent extreme thermal throttling during processing
+    write /dev/cpuset/camera-daemon/cpus 0-5
+
+    # Full power unlocked for heavy games and foreground apps, utilizing all cores including the Prime core (7)
+    write /dev/cpuset/top-app/cpus 0-7
 
 on property:persist.sys.xtra-daemon.enabled=*
     restart loc_launcher

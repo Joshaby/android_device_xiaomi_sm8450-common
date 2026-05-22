@@ -34,7 +34,6 @@ import android.view.Display.HdrCapabilities;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 
-import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.powertools.PowerProfileTileService;
 import org.lineageos.settings.hypercharge.HyperChargeService;
@@ -98,9 +97,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     private void startServices(Context context) {
         if (DEBUG) Log.i(TAG, "Starting services...");
-
-        // Initialize Doze features
-        DozeUtils.onBootCompleted(context);
 
         // Start Thermal Management Services
         ThermalUtils.getInstance(context).startService();

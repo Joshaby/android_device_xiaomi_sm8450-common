@@ -284,3 +284,10 @@ ro.vendor.audio.sdk.ssr=false
 
 # Display Early Hint
 vendor.display.enable_early_hint=1
+
+# JNI/Kernel Optimization
+ro.kernel.android.checkjni=0
+ro.kernel.checkjni=0
+
+# Qualcomm UX Engine
+vendor.iop.enable_uxe=1

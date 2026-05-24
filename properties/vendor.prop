@@ -291,3 +291,9 @@ ro.kernel.checkjni=0
 
 # Qualcomm UX Engine
 vendor.iop.enable_uxe=1
+
+# Media and Display Optimization
+ro.vendor.display.svi=1 
+
+# CPU Controller Optimization
+ro.vendor.qti.core_ctl_min_cpu=2 

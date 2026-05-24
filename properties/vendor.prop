@@ -273,3 +273,7 @@ ro.vendor.qti.sys.fw.bg_apps_limit=36
 ro.vendor.qti.sys.fw.bservice_enable=true
 ro.vendor.qti.sys.fw.bservice_limit=5
 ro.vendor.qti.sys.fw.bservice_age=5000
+
+# Display
+vendor.display.disable_skip_validate=1
+vendor.display.enable_default_color_mode=1 

@@ -266,3 +266,10 @@ persist.vendor.sensors.debug.hal=0
 pm.dexopt.install=speed-profile
 pm.dexopt.bg-dexopt=speed
 pm.dexopt.boot=verify
+
+# Performance/PowerHAL Optimization
+vendor.power.pasr.enabled=true
+ro.vendor.qti.sys.fw.bg_apps_limit=36
+ro.vendor.qti.sys.fw.bservice_enable=true
+ro.vendor.qti.sys.fw.bservice_limit=5
+ro.vendor.qti.sys.fw.bservice_age=5000

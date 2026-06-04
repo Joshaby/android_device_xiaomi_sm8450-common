@@ -315,6 +315,3 @@ ro.vendor.display.prefill=1
 
 # I/O Optimization
 vendor.perf.iop_v3.enable=1
-
-# Graphic Backend Optimization
-vendor.gralloc.enable_fb_ubwc=1 

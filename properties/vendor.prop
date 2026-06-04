@@ -279,6 +279,7 @@ vendor.display.disable_skip_validate=1
 vendor.display.enable_default_color_mode=1 
 
 # Audio Optimization
+vendor.audio.offload.buffer.size.kb=32
 ro.vendor.audio.sdk.ssr=false 
 
 # Display Early Hint

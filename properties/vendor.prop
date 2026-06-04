@@ -301,9 +301,3 @@ ro.vendor.qti.core_ctl_min_cpu=2
 # Stability Optimization
 vendor.power.stats_log=0
 ro.vendor.qti.sys.fw.bg_app_reboot=false 
-
-# Display Optimization
-ro.vendor.display.ad=1
-
-# Sensor Optimization
-persist.vendor.sensors.enable.mag_filter=true

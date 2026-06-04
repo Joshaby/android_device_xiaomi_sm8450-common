@@ -304,7 +304,6 @@ ro.vendor.qti.sys.fw.bg_app_reboot=false
 
 # Display Optimization
 ro.vendor.display.ad=1
-ro.vendor.display.cabl=0
 
 # Sensor Optimization
 persist.vendor.sensors.enable.mag_filter=true

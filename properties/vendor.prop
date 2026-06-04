@@ -312,6 +312,3 @@ persist.vendor.sensors.enable.mag_filter=true
 persist.vendor.qti.games.gt.prof=1
 vendor.display.enable_stats_log=0
 ro.vendor.display.prefill=1
-
-# I/O Optimization
-vendor.perf.iop_v3.enable=1

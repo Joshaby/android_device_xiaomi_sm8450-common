@@ -43,3 +43,7 @@ ro.vold.umsdirtyratio=20
 
 # Increase max cached processes
 activity_manager.max_cached_processes=64
+
+# Deep Sleep
+pm.sleep_mode=1
+vendor.post_boot.parsed=1

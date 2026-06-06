@@ -576,10 +576,6 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
-# Device-Features
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/cupid.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/device_features/cupid.xml
-
 # ART - PREOPT
 # Enable DM file pre-opting to reduce first boot time
 PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true

@@ -44,6 +44,13 @@ ro.vold.umsdirtyratio=20
 # Increase max cached processes
 activity_manager.max_cached_processes=64
 
-# Deep Sleep
+# Power-saving props
+ro.vendor.use_data_netmgrd=true
+ro.vold.umsdirtyratio=20
+ro.ril.disable.power.collapse=0
+power.saving.mode=1
 pm.sleep_mode=1
-vendor.post_boot.parsed=1
+persist.radio.add_power_save=1
+ro.ril.fast.dormancy.rule=1
+ro.ril.fast.dormancy.timeout=3
+ro.mot.eri.losalert.delay=1000

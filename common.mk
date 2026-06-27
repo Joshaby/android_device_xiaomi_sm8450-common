@@ -320,7 +320,6 @@ PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
     FrameworksResCommon \
     SettingsResCommon \
-    Launcher3ResCommon\
     SystemUIResCommon \
     TelephonyResCommon \
     WifiResCommon

@@ -177,22 +177,11 @@ ro.surface_flinger.support_kernel_idle_timer=true
 debug.sf.enable_adpf_cpu_hint=true
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
-debug.hwui.use_triple_buffering=true
-debug.hwui.renderer=opengl
-debug.renderengine.backend=gles
 debug.hwui.skia_atrace_enabled=false
 debug.hwui.skia_tracing_enabled=false
 debug.hwui.skia_use_perfetto_track_events=false
 ro.egl.blobcache.multifile=true
 ro.egl.blobcache.multifile_limit=33554432
-
-# Fling
-ro.min.fling_velocity=160
-ro.max.fling_velocity=20000
-ro.vendor.qti.cgroup_follow.enable=true
-persist.vendor.qti.inputopts.enable=true
-persist.vendor.qti.inputopts.movetouchslop=0.6
-ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
 
 # Incremental
 ro.incremental.enable=yes

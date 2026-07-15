@@ -80,26 +80,10 @@ echo 15 15 15 15 15 15 15 15 > /proc/sys/walt/sched_util_busy_hyst_cpu_util
 # binder activity tasks
 echo 325 > /proc/sys/walt/walt_low_latency_task_threshold
 
-# Cpuset
-# Isolate audio tasks to efficiency cores for stability
-echo 0-2 > /dev/cpuset/audio-app/cpus
-
-# Bind all background noise and low-priority tasks to the 4 efficiency cores (0-3)
-echo 0-3 > /dev/cpuset/background/cpus
-echo 0-3 > /dev/cpuset/restricted/cpus
+# cpuset parameters
+echo 0-1 > /dev/cpuset/background/cpus
 echo 0-3 > /dev/cpuset/system-background/cpus
-
-# Everyday apps use efficiency cores + 2 performance cores (blocks the 3rd big core and Prime core to reduce heat)
-echo 0-5 > /dev/cpuset/foreground/cpus
-
-# Balance UI animation spikes and window rendering across efficiency and performance cores (excluding Prime)
-echo 0-5 > /dev/cpuset/foreground_window/cpus
-
-# Balanced camera daemon profile to prevent extreme thermal throttling during processing
-echo 0-5 > /dev/cpuset/camera-daemon/cpus
-
-# Full power unlocked for heavy games and foreground apps, utilizing all cores including the Prime core (7)
-echo 0-7 > /dev/cpuset/top-app/cpus
+echo 0-3 > /dev/cpuset/restricted/cpus
 
 # Turn off scheduler boost at the end
 echo 0 > /proc/sys/walt/sched_boost

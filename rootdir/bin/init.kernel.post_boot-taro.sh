@@ -63,10 +63,10 @@ echo 1 > /sys/devices/system/cpu/cpu7/core_ctl/nr_prev_assist_thresh
 echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
 
 # Setting b.L scheduler parameters
-echo 85 85 > /proc/sys/walt/sched_upmigrate
-echo 65 75 > /proc/sys/walt/sched_downmigrate
-echo 95 > /proc/sys/walt/sched_group_upmigrate
-echo 75 > /proc/sys/walt/sched_group_downmigrate
+echo 95 95 > /proc/sys/walt/sched_upmigrate
+echo 85 85 > /proc/sys/walt/sched_downmigrate
+echo 100 > /proc/sys/walt/sched_group_upmigrate
+echo 85 > /proc/sys/walt/sched_group_downmigrate
 echo 1 > /proc/sys/walt/sched_walt_rotate_big_tasks
 echo 400000000 > /proc/sys/walt/sched_coloc_downmigrate_ns
 echo 39000000 39000000 39000000 39000000 39000000 39000000 39000000 5000000 > /proc/sys/walt/sched_coloc_busy_hyst_cpu_ns
@@ -104,7 +104,7 @@ echo 614400 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
 echo 1 > /sys/devices/system/cpu/cpufreq/policy0/walt/pl
 
 # configure input boost settings
-echo 1324800 0 0 0 1209600 1209600 0 0 > /proc/sys/walt/input_boost/input_boost_freq
+echo 1324800 0 0 0 1209600 0 0 0 > /proc/sys/walt/input_boost/input_boost_freq
 echo 350 > /proc/sys/walt/input_boost/input_boost_ms
 
 # configure powerkey wakeup boost

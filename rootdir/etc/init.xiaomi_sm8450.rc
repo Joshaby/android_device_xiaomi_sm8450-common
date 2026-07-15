@@ -219,7 +219,7 @@ on property:vendor.post_boot.parsed=1
 
     # Cpuset
     # Isolate audio tasks to efficiency cores for stability
-    write /dev/cpuset/audio-app/cpus 1-2
+    write /dev/cpuset/audio-app/cpus 0-2
 
     # Bind all background noise and low-priority tasks to the 4 efficiency cores (0-3)
     write /dev/cpuset/background/cpus 0-3
@@ -230,7 +230,7 @@ on property:vendor.post_boot.parsed=1
     write /dev/cpuset/foreground/cpus 0-5
 
     # Balance UI animation spikes and window rendering across efficiency and performance cores (excluding Prime)
-    write /dev/cpuset/foreground_window/cpus 0-6
+    write /dev/cpuset/foreground_window/cpus 0-5
 
     # Balanced camera daemon profile to prevent extreme thermal throttling during processing
     write /dev/cpuset/camera-daemon/cpus 0-5

@@ -218,7 +218,7 @@ endif
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
     $(COMMON_PATH)/vintf/device_framework_compatibility_matrix.xml \
-    hardware/dolby/configs/vintf/dolby_framework_matrix.xml \
+    $(COMMON_PATH)/vintf/dolby_framework_matrix.xml \
     hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
     $(COMMON_PATH)/vintf/device_framework_matrix.xml
 
